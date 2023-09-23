@@ -8,7 +8,7 @@ from selenium.webdriver.chrome.options import Options
 from pyvirtualdisplay import Display
 
 
-class PyGPT4:
+class PyGPT3:
     def __init__(self, cookie_file_path, web_url):
         self.cookie_file_path = cookie_file_path
         self.web_url = web_url
