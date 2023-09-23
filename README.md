@@ -10,3 +10,7 @@
 5. Open the extension
 6. Click "Export" on the bottom right, then "Export as JSON" (This saves your cookies to clipboard)
 7. Paste your cookies into a file `cookies.json`.
+
+### Install Requirements
+
+`pip3 install -r requirements.txt`
