@@ -15,3 +15,11 @@
 ```
 pip3 install -r requirements.txt
 ```
+
+Regular Example:
+```python
+def chatgpt(msg_prompt: str):
+    gpt3 = PyGPT3("cookie_file_path", 'chat_url')
+    return str(gpt3.chat(msg_prompt))
+chatgpt("hello world")
+```
