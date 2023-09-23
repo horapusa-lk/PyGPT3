@@ -9,7 +9,9 @@ from pyvirtualdisplay import Display
 
 
 class PyGPT4:
-    def __int__(self, cookie_file_path, web_url):
+    def __init__(self, cookie_file_path, web_url):
+        self.cookie_file_path = cookie_file_path
+        self.web_url = web_url
         # Start virtual display
         self.display = Display(visible=False, size=(1920, 1080))  # Adjust size as needed
         self.display.start()
@@ -21,11 +23,11 @@ class PyGPT4:
         self.driver = webdriver.Chrome()
 
         # Load the JSON data from the cookie.json file
-        with open(cookie_file_path, 'r') as file:
+        with open(self.cookie_file_path, 'r') as file:
             cookies = json.load(file)
 
         # Navigate to a webpage
-        self.driver.get(web_url)
+        self.driver.get(self.web_url)
 
         for cookie in cookies:
             # Check if 'sameSite' is missing or invalid, and set it to 'Lax'
@@ -35,7 +37,7 @@ class PyGPT4:
             self.driver.add_cookie(cookie)
 
         # Navigate to a webpage
-        self.driver.get(web_url)
+        self.driver.get(self.web_url)
 
     def chat(self, prompt):
         textarea = self.driver.find_element(By.CLASS_NAME,
@@ -62,5 +64,3 @@ class PyGPT4:
         self.display.stop()
         self.driver.quit()
         print("Quit Success")
-
-
