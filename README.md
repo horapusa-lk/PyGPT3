@@ -12,5 +12,6 @@
 7. Paste your cookies into a file `cookies.json`.
 
 ### Install Requirements
-
-`pip3 install -r requirements.txt`
+```
+pip3 install -r requirements.txt
+```
