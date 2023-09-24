@@ -42,7 +42,6 @@ class PyGPT3:
     def chat(self, prompt):
         textarea = self.driver.find_element(By.CLASS_NAME,
                                        'GrowingTextArea_textArea__eadlu')  # Replace 'button_id' with the actual ID of the button
-
         textarea.clear()
         textarea.send_keys(prompt)
         textarea.send_keys(Keys.RETURN)
